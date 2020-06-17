@@ -4,12 +4,16 @@ workflow wgsMetrics {
   input {
     File inputBam
     String outputFileNamePrefix = basename(inputBam, '.bam')
+    File refFasta
+    String docker = "g3chen/picard:1.0"
   }
 
   call collectWGSmetrics {
     input:
       inputBam = inputBam,
       outputPrefix = outputFileNamePrefix
+      refFasta = refFasta
+      docker = docker
   }
 
   output {
@@ -36,7 +40,8 @@ task collectWGSmetrics {
   input {
     File inputBam
     String picardJar = "$PICARD_ROOT/picard.jar"
-    String refFasta = "$HG19_ROOT/hg19_random.fa"
+    # String refFasta = "$HG19_ROOT/hg19_random.fa"
+    File refFasta
     String metricTag = "WGS"
     String filter = "LENIENT"
     String outputPrefix = "OUTPUT"
@@ -44,6 +49,7 @@ task collectWGSmetrics {
     Int coverageCap = 500
     String modules = "picard/2.21.2 hg19/p13"
     Int timeout = 24
+    String docker
   }
 
   parameter_meta {
@@ -57,6 +63,7 @@ task collectWGSmetrics {
     coverageCap: "Coverage cap, picard parameter"
     modules: "Environment module names and version to load (space separated) before command execution"
     timeout: "Maximum amount of time (in hours) the task can run for."
+    docker: "Docker container to run the workflow in"
   }
 
   meta {
@@ -77,6 +84,7 @@ task collectWGSmetrics {
   >>>
 
   runtime {
+    docker:  "~{docker}"
     memory:  "~{jobMemory} GB"
     modules: "~{modules}"
     timeout: "~{timeout}"
