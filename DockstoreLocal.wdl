@@ -11,8 +11,8 @@ workflow wgsMetrics {
   call collectWGSmetrics {
     input:
       inputBam = inputBam,
-      outputPrefix = outputFileNamePrefix
-      refFasta = refFasta
+      outputPrefix = outputFileNamePrefix,
+      refFasta = refFasta,
       docker = docker
   }
 
