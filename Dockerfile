@@ -22,11 +22,11 @@ USER ubuntu
 COPY .bashrc /home/ubuntu/.bashrc
 
 # set environment paths for modules
-ENV JAVA_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/java-8"
-ENV PICARD_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/picard-2.21.2"
+#ENV JAVA_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/java-8"
+#ENV PICARD_ROOT="/modules/gsi/modulator/sw/Ubuntu18.04/picard-2.21.2"
 
-ENV LD_LIBRARY_PATH="/modules/gsi/modulator/sw/Ubuntu18.04/java-8/lib"
-ENV MANPATH="/modules/gsi/modulator/sw/Ubuntu18.04/java-8/man"
-ENV PATH="/modules/gsi/modulator/sw/Ubuntu18.04/java-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" 
+#ENV LD_LIBRARY_PATH="/modules/gsi/modulator/sw/Ubuntu18.04/java-8/lib"
+#ENV MANPATH="/modules/gsi/modulator/sw/Ubuntu18.04/java-8/man"
+#ENV PATH="/modules/gsi/modulator/sw/Ubuntu18.04/java-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" 
 
 CMD /bin/bash
