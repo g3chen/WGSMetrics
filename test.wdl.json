@@ -1,5 +1,6 @@
 {
-  "wgsMetrics.inputBam": "/.mounts/labs/gsi/testdata/wgsMetrics/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bam",
+  "wgsMetrics.inputBam": "/home/ubuntu/Downloads/sample_data/test_wgsmetrics/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bam",
   "wgsMetrics.outputFileNamePrefix": "PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001",
-  "wgsMetrics.collectWGSmetrics.modules": "picard/2.21.2"
+  "wgsMetrics.collectWGSmetrics.modules": "picard/2.21.2",
+  "wgsMetrics.collectWGSmetrics.refFasta": "/data/HG19_ROOT/hg19_random.fa"
 }

@@ -4,11 +4,9 @@ workflow test_location {
 
 task find_tools {
     command {
-        whereis java
+        echo $PATH
         echo "@@@@@@@@@@@@@@@@"
         echo $MANPATH
-        echo "@@@@@@@@@@@@@@@@"
-        echo $PATH
         echo "@@@@@@@@@@@@@@@@"
         echo $LD_LIBRARY_PATH
         echo "@@@@@@@@@@@@@@@@"
@@ -20,6 +18,7 @@ task find_tools {
         String message = read_string(stdout())
     }
     runtime {
-        docker: "g3chen/picard:1.0"
+        docker: "g3chen/wgsmetrics@sha256:5517c524bd0d3b39273b0ac4e16a52fc94b8d9c2c787e79a548183a1acc08670"
+        modules: "picard/2.21.2"
     }
 }
